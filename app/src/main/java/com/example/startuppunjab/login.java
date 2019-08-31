@@ -54,7 +54,7 @@ public class login extends AppCompatActivity {
                 RequestBody body = RequestBody.create(MEDIA_TYPE, postdata.toString());
                 OkHttpClient client = new OkHttpClient();
 
-                String url = "http://146.148.48.62:5001/login";
+                String url = "http://146.148.48.62:5001/api/login";
                // Toast.makeText(login.this, url, Toast.LENGTH_SHORT).show();
                 Request request = new Request.Builder()
                         .post(body)
@@ -76,19 +76,21 @@ public class login extends AppCompatActivity {
 
                         String mMessage = response.body().string();
                         Log.w("Response",mMessage);
-//                        if (response.isSuccessful()){
-//                            try {
-//                                JSONObject json = new JSONObject(mMessage);
-//                                final String serverResponse = json.getString("lul");
-//                                Intent i = new Intent(login.this,
-//                                        dashboard.class);
-//                                startActivity(i);
-//                                login.this.finish();
-//                            } catch (Exception e){
-//                                e.printStackTrace();
-//                            }
+                        if (response.isSuccessful()){
+                            try {
+                                JSONObject json = new JSONObject(mMessage);
+                                final String serverResponse = json.getString("status");
+                                if(serverResponse=="True"){
+                                Intent i = new Intent(login.this,
+                                        dashboard.class);
+                                    i.putExtra("email", e1.getText().toString());
+                                startActivity(i);
+                                login.this.finish();}
+                            } catch (Exception e){
+                                e.printStackTrace();
+                            }
 
-//                        }
+                        }
 
                        // Toast.makeText(login.this, response.body().toString(), Toast.LENGTH_SHORT).show();
                     }
