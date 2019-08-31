@@ -25,7 +25,8 @@ import java.io.IOException;
 public class login extends AppCompatActivity {
     Button login;
     EditText e1,e2;
-    public static final MediaType MEDIA_TYPE = MediaType.parse("application/json");
+    String s;
+    public static final MediaType MEDIA_TYPE = MediaType.parse("application/json; charset=utf-8");
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class login extends AppCompatActivity {
                 }
 
                 RequestBody body = RequestBody.create(MEDIA_TYPE, postdata.toString());
+                //Toast.makeText(login.this,body.toString(), Toast.LENGTH_SHORT).show();
                 OkHttpClient client = new OkHttpClient();
 
                 String url = "http://146.148.48.62:5001/api/login";
@@ -62,6 +64,7 @@ public class login extends AppCompatActivity {
                         .addHeader("cache-control", "no-cache")
                         .url(url)
                         .build();
+                //Toast.makeText(login.this, request.toString(), Toast.LENGTH_SHORT).show();
                 client.newCall(request).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
@@ -77,15 +80,29 @@ public class login extends AppCompatActivity {
                         String mMessage = response.body().string();
                         Log.w("Response",mMessage);
                         if (response.isSuccessful()){
+                            Log.w("Response",mMessage);
                             try {
                                 JSONObject json = new JSONObject(mMessage);
                                 final String serverResponse = json.getString("status");
-                                if(serverResponse=="True"){
+                                //Toast.makeText(login.this, serverResponse, Toast.LENGTH_SHORT).show();
+                                if(serverResponse=="true"){
+                                    s="login successfull";
                                 Intent i = new Intent(login.this,
                                         dashboard.class);
                                     i.putExtra("email", e1.getText().toString());
                                 startActivity(i);
                                 login.this.finish();}
+                                else if(serverResponse=="false")
+                                {
+                                    s="wrong password";
+                                   //Toast.makeText(login.this, "Invalid Email/Password", Toast.LENGTH_SHORT).show();
+                                }
+                                else if(serverResponse==null)
+                                {
+                                    Toast.makeText(login.this, "Email not registered.", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                    Toast.makeText(login.this, "Not Working", Toast.LENGTH_SHORT).show();
                             } catch (Exception e){
                                 e.printStackTrace();
                             }
@@ -94,7 +111,9 @@ public class login extends AppCompatActivity {
 
                        // Toast.makeText(login.this, response.body().toString(), Toast.LENGTH_SHORT).show();
                     }
+
                 });
+                Toast.makeText(login.this, s, Toast.LENGTH_SHORT).show();
 
 
             }
