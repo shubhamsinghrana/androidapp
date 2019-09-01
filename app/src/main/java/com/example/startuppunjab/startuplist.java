@@ -36,8 +36,8 @@ public class startuplist extends AppCompatActivity {
         obj = new startuplist.myhelperclass(this, android.R.layout.simple_list_item_1, content);
         mylist.setAdapter(obj);
 
-        content.add("Start Up Name");
-        date.add("Location");
+        content.add("Jugnoo");
+        date.add("Unnamed Road, Sector 45, Gurugram, Haryana 122003");
         id.add("email");
         mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

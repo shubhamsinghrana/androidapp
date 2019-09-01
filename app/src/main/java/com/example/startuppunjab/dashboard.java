@@ -85,8 +85,6 @@ public class dashboard extends AppCompatActivity {
 
             }
         });
-
-        Toast.makeText(this, "ਮੀਨੂ", Toast.LENGTH_SHORT).show();
         setTitle("");
         // requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide();

@@ -69,22 +69,16 @@ android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="4dp">
+
         <TextView
             android:id="@+id/dumtext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="150"
+            android:text="TextView"
             android:textAlignment="center"
             android:textColor="#000"
-            android:maxLength="50"
-            android:textSize="24dp"
-            android:text="TextView"  />
-        <TextView
-            android:id="@+id/dumtext1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:maxLength="50"
-            android:text="TextView"  />
+            android:textSize="18dp" />
 
     </LinearLayout>
     </androidx.cardview.widget.CardView>

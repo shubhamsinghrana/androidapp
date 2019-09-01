@@ -7,42 +7,20 @@
     tools:context=".login">
 
     <TextView
-        android:id="@+id/textview2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Not Registered Yet?"
-        android:fontFamily="sans-serif-light"
-        android:textSize="16sp"
-        android:textColor="@color/gray"
-        android:layout_marginLeft="16sp"
-        android:layout_marginStart="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"/>
-
-    <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="16sp"
-        android:textColor="@color/red"
-        android:layout_marginLeft="4sp"
-        android:layout_marginStart="4sp"
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
         android:layout_marginRight="8sp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/red"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.006"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textview2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988"/>
+        app:layout_constraintVertical_bias="0.988" />
 
     <EditText
         android:id="@+id/edittext"

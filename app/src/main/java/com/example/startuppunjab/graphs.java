@@ -75,7 +75,7 @@ public class graphs extends AppCompatActivity {
 
         BarDataSet bardataset = new BarDataSet(entries, "Cells");
         BarDataSet bardataset2 = new BarDataSet(entries2, "Cells");
-        BarDataSet bardataset3 = new BarDataSet(entries2, "Cells");
+        BarDataSet bardataset3 = new BarDataSet(entries3, "Cells");
 
         ArrayList<String> labels = new ArrayList<String>();
         labels.add("Jan");

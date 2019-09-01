@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class shownotification extends AppCompatActivity {
-    ArrayList<String> content, date, id,head;
+    ArrayList<String> content, id,head;
     shownotification.myhelperclass obj;
     ListView mylist;
     String t;
@@ -45,9 +45,8 @@ public class shownotification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shownotification);
     mylist=findViewById(R.id.listmy2);
-        setTitle("Latest News");
+        setTitle("Government Updates");
         content = new ArrayList<>();
-        date = new ArrayList<>();
         id = new ArrayList<>();
         head=new ArrayList<>();
         OkHttpClient client = new OkHttpClient();
@@ -86,11 +85,7 @@ public class shownotification extends AppCompatActivity {
 
                  mMessage = response.body().string();
                 Log.w("Response",mMessage);
-                if (response.isSuccessful()){
-                    Log.w("Response",mMessage);
-
-
-                    fetchvalue();
+                fetchvalue();
 
                     try {
 
@@ -101,8 +96,9 @@ public class shownotification extends AppCompatActivity {
                             id.add(json.getString("id"));
                             content.add(json.getString("content"));
                             head.add(json.getString("title"));
-                            //obj.notifyDataSetChanged();
+
                         }
+                        obj.notifyDataSetChanged();
                         }
 
 
@@ -110,7 +106,7 @@ public class shownotification extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                }
+
 
                 // Toast.makeText(login.this, response.body().toString(), Toast.LENGTH_SHORT).show();
             }
@@ -128,7 +124,7 @@ public class shownotification extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 final AlertDialog.Builder mybuilder=new AlertDialog.Builder(shownotification.this);
-                mybuilder.setMessage(head.get(i)+"\n\n"+date.get(i));
+                mybuilder.setMessage(head.get(i)+"\n\n"+content.get(i));
                 AlertDialog mydialog=mybuilder.create();
                 mydialog.show();
                 //oast.makeText(shownotification.this, mMessage, Toast.LENGTH_SHORT).show();
@@ -147,11 +143,10 @@ public class shownotification extends AppCompatActivity {
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             View myrow = getLayoutInflater().inflate(R.layout.myyy1, parent, false);
             TextView t1, t2,t3;
-            t1 = myrow.findViewById(R.id.timedate1);
-            t2 = myrow.findViewById(R.id.dumtext1);
-            t3=myrow.findViewById(R.id.dumtext);
+            t1 = myrow.findViewById(R.id.dumtext);
+
+            t3=myrow.findViewById(R.id.timedate1);
             t1.setText(content.get(position));
-            t2.setText(date.get(position));
             t3.setText(head.get(position));
 
             return myrow;
@@ -165,8 +160,8 @@ public class shownotification extends AppCompatActivity {
 
         try {
 
-
             Toast.makeText(this, mMessage, Toast.LENGTH_SHORT).show();
+
             JSONArray jsonA= new JSONArray(mMessage);
             for(int n=0;n<jsonA.length();n++) {
                 JSONObject json = jsonA.getJSONObject(n);

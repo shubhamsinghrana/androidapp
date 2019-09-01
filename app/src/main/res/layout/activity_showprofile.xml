@@ -21,14 +21,15 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="45dp"
-                android:src="@drawable/news" />
+                android:src="@drawable/news"
+                app:srcCompat="@drawable/jugnoo" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Company ABC"
+                android:text="Jugnoo"
                 android:textColor="#fff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -83,14 +84,15 @@
                         android:text="Years"
                         android:textColor="@color/colorAccent"
                         android:textSize="20sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/gray"/>
+                        android:text=" Since 2014"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <LinearLayout
@@ -106,14 +108,15 @@
                         android:text="Service"
                         android:textColor="@color/colorAccent"
                         android:textSize="20sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sell"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/gray"/>
+                        android:text="Logistics"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -145,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="abc@gmail.com"
+                android:text="Jugnoo@gmail.com"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -167,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="+266 225 225"
+                android:text="+1234567890"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -189,23 +192,24 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Hno agiabncivebwkneoinftugyhj"
+                android:text=" Unnamed Road, Sector 45, Gurugram, Haryana 122003"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:backgroundTint="#FCF6F8"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
             android:layout_marginTop="25dp"
-            android:layout_margin="10dp">
+            android:backgroundTint="#FCF6F8">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:layout_marginTop="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:textAlignment="center">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -219,7 +223,7 @@
                     android:id="@+id/awardmeetnofetch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" Government Schemeextcjvkbhnkmlzxdhcfjvgbkhnjkmdxgcfhvgbjhnjxdhcgfbhjnjkmxdcgfvgbhjnkmxdcgfvgbhjnjkmxhcfjhvgbhknmks for Startups"
+                    android:text="Jugnoo in News Below you can find some of our favourite releases and pictures! Samar Singla's quote in Entrepreneur India story on Why Chandigarh is an Ideal Breeding Ground for Startups? Jugnoo has been featured among Chandigarh based startup that managed to Scout funds from MNC's and other big investors."
                     android:textAlignment="center"
                     android:textSize="14dp" />
 
