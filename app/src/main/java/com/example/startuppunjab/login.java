@@ -25,7 +25,7 @@ import java.io.IOException;
 public class login extends AppCompatActivity {
     Button login;
     EditText e1,e2;
-    String s;
+    String s="success";
     public static final MediaType MEDIA_TYPE = MediaType.parse("application/json; charset=utf-8");
     @Override
 
@@ -84,12 +84,21 @@ public class login extends AppCompatActivity {
                             try {
                                 JSONObject json = new JSONObject(mMessage);
                                 final String serverResponse = json.getString("status");
+                                String s1=json.getString("name");
+                                String s2=json.getString("date");
+                                String s3=json.getString("employees");
+                                String s4=json.getString("industry");
+                                String s5=json.getString("rank");
                                 //Toast.makeText(login.this, serverResponse, Toast.LENGTH_SHORT).show();
                                 if(serverResponse=="true"){
-                                    s="login successfull";
+
                                 Intent i = new Intent(login.this,
                                         dashboard.class);
-                                    i.putExtra("email", e1.getText().toString());
+                                    i.putExtra("email", s1);
+                                    i.putExtra("date",s2 );
+                                    i.putExtra("employees",s3 );
+                                    i.putExtra("industry",s4 );
+                                    i.putExtra("rank",s5 );
                                 startActivity(i);
                                 login.this.finish();}
                                 else if(serverResponse=="false")
@@ -99,7 +108,8 @@ public class login extends AppCompatActivity {
                                 }
                                 else if(serverResponse==null)
                                 {
-                                    Toast.makeText(login.this, "Email not registered.", Toast.LENGTH_SHORT).show();
+                                    s="error in connection";
+                                   // Toast.makeText(login.this, "Email not registered.", Toast.LENGTH_SHORT).show();
                                 }
                                 else
                                     Toast.makeText(login.this, "Not Working", Toast.LENGTH_SHORT).show();
@@ -113,7 +123,7 @@ public class login extends AppCompatActivity {
                     }
 
                 });
-                Toast.makeText(login.this, s, Toast.LENGTH_SHORT).show();
+              // Toast.makeText(login.this, s, Toast.LENGTH_SHORT).show();
 
 
             }

@@ -1,8 +1,11 @@
 package com.example.startuppunjab;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Color;;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -16,18 +19,41 @@ import java.util.ArrayList;
 
 
 public class graphs extends AppCompatActivity {
-
+String d,d2,d3,d4,d5;
+TextView t1,t2,t3,t4,t5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graphs);
+        t1=findViewById(R.id.t1);
+        t2=findViewById(R.id.t2);
+        t3=findViewById(R.id.t3);
+        t4=findViewById(R.id.t41);
+        t5=findViewById(R.id.nameodsu);
         BarChart barChart = (BarChart) findViewById(R.id.barchart);
         BarChart barChart2 = (BarChart) findViewById(R.id.barchart2);
         BarChart barChart3 = (BarChart) findViewById(R.id.barchart3);
         setTitle("");
         // requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide();
+        Intent iin= getIntent();
+        Bundle b = iin.getExtras();
+        if(b!=null)
+        {
+            d=(String) b.get("email");
+            d2=(String) b.get("date");
+            d3=(String) b.get("employees");
+            d4=(String) b.get("industry");
+            d5=(String) b.get("rank");
 
+            // Toast.makeText(this, (String) b.get("id"), Toast.LENGTH_SHORT).show();
+        }
+
+        t5.setText(d);
+        t1.setText(d5);
+        t2.setText(d2);
+        t3.setText(d4);
+        t4.setText(d3);
         ArrayList<BarEntry> entries = new ArrayList<>();
 
         entries.add(new BarEntry(15f, 4));

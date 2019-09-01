@@ -29,7 +29,7 @@ public class startuplist extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newslist);
         mylist = findViewById(R.id.mylist1);
-        setTitle("Latest News");
+        setTitle("Collaborate with other startups");
         content = new ArrayList<>();
         date = new ArrayList<>();
         id = new ArrayList<>();

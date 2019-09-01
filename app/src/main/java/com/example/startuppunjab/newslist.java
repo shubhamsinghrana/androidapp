@@ -39,7 +39,7 @@ public class newslist extends AppCompatActivity {
 
         content.add("heading");
         date.add("heading 30 linesqwertyuiop[asdfghjkl;zxcvbnm,wertyuiop[asdfghjkl;zxcvbnm,.");
-        id.add("https://www.javatpoint.com/android-webview-example");
+        id.add("https://www.google.com");
         mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
