@@ -1,34 +1,82 @@
 package com.example.startuppunjab;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class dashboard extends AppCompatActivity {
 
 
-    LinearLayout l1;
+    LinearLayout l1,l2,l3,l4,l5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         l1=findViewById(R.id.newsid);
+        l2=findViewById(R.id.l2);
+        l3=findViewById(R.id.l3);
+        l4=findViewById(R.id.itemSlid1);
+        l5=findViewById(R.id.itemSlid);
+
         l1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(dashboard.this,
                         newslist.class);
                 startActivity(i);
-                dashboard.this.finish();
+
+            }
+        });
+        l2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(dashboard.this,
+                        startuplist.class);
+                startActivity(i);
+
+            }
+        });
+        l3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(dashboard.this,
+                        shownotification.class);
+                startActivity(i);
+
+            }
+        });
+        l4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(dashboard.this,
+                        graphs.class);
+                startActivity(i);
+
+            }
+        });
+        l5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(dashboard.this,
+                        fillform.class);
+                startActivity(i);
+
             }
         });
 
+        Toast.makeText(this, "ਮੀਨੂ", Toast.LENGTH_SHORT).show();
         setTitle("");
         // requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide();
 
     }
+
 }
