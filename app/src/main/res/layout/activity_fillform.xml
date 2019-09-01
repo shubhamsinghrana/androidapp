@@ -57,7 +57,7 @@
                     <Spinner
                         android:id="@+id/slumname"
                         android:layout_width="match_parent"
-
+                        android:background="@drawable/bginputsel"
                         android:layout_height="55dp"
 
                         android:hint=""
@@ -87,7 +87,7 @@
                         android:id="@+id/hof"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
-
+                        android:background="@drawable/bginputsel"
                         android:hint=""
                         android:inputType="text"
                         android:maxLength="25"
@@ -126,7 +126,7 @@
                         android:id="@+id/Fathersname"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
-
+                        android:background="@drawable/bginputsel"
                         android:hint=""
                         android:inputType="text"
                         android:maxLength="25"
@@ -157,7 +157,7 @@
                         android:id="@+id/hodage"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
-
+                        android:background="@drawable/bginputsel"
                         android:hint=""
                         android:inputType="phone"
                         android:maxLength="25"
@@ -188,7 +188,7 @@
                         android:id="@+id/mobileno"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
-
+                        android:background="@drawable/bginputsel"
                         android:hint=""
                         android:inputType="phone"
                         android:maxLength="25"

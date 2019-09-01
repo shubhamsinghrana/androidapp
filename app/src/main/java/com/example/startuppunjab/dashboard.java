@@ -3,7 +3,9 @@ package com.example.startuppunjab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ public class dashboard extends AppCompatActivity {
 
 
     LinearLayout l1,l2,l3,l4,l5;
+    ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,17 @@ public class dashboard extends AppCompatActivity {
         l3=findViewById(R.id.l3);
         l4=findViewById(R.id.itemSlid1);
         l5=findViewById(R.id.itemSlid);
+        img=findViewById(R.id.signout);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(dashboard.this,
+                        login.class);
+                startActivity(i);
+                dashboard.this.finish();
+
+            }
+        });
 
         l1.setOnClickListener(new View.OnClickListener() {
             @Override
